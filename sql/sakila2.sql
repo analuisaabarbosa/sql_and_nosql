@@ -1,6 +1,6 @@
 USE sakila;
 
--- Consultas para contar os registros de cada query.
+-- consultas para contar os registros de cada query.
 
 SELECT COUNT(*) 
 FROM (
