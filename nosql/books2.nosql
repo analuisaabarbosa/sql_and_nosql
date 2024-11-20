@@ -1,2 +1,3 @@
 -- busca que traz o número dos resultados das consultas anteriores usando o contador.
+
 db["biblioteca"].countDocuments({ $or: [ { title: { $regex: "MongoDB", $options: "i" } }, { title: { $regex: "SQL Server", $options: "i" } }, { status: { $ne: "publicado" }, pageCount: { $lt: 300 } }, { isbn: { $regex: "^18", $options: "i" } }, { longDescription: { $regex: "Java", $options: "i" } }, { longDescription: { $regex: "Mobile", $options: "i" } } ]});
