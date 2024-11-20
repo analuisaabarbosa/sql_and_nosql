@@ -1,0 +1,13 @@
+-- busca de livros que contém as palavras MongoDB e SQL Server no título. 
+db["biblioteca"].find({ $or: [{ title: { $regex: "MongoDB", $options: "i" }}, { title: { $regex: "SQL Server", $options: "i" } }] }).pretty();
+
+-- busca de quantos livros não estão com o status publicado e pageCount menor que 300. 
+db["biblioteca"].countDocuments({ $and: [{ status: { $ne: "publicado" } }, { pageCount: { $lt: 300 } }] });
+
+- busca com expressão regular onde ISBN começa com 18. 
+db["biblioteca"].find({ isbn: { $regex: "^18" } }).pretty();
+
+- - busca de livros que contém a palavra Java ou Mobile na descrição do livro independente se começa com maiúsculo ou minúsculo. 
+db["biblioteca"].find({ $or: [{ longDescription: { $regex: "Java", $options: "i" }}, { longDescription: { $regex: "Mobile", $options: "i" } }] }).pretty();
+
+
